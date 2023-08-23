@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		F25502FF2A95DBC100C687D7 /* AziTeamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25502FE2A95DBC100C687D7 /* AziTeamApp.swift */; };
-		F25503012A95DBC100C687D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25503002A95DBC100C687D7 /* ContentView.swift */; };
+		F25503012A95DBC100C687D7 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25503002A95DBC100C687D7 /* MainPage.swift */; };
 		F25503032A95DBC200C687D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25503022A95DBC200C687D7 /* Assets.xcassets */; };
 		F25503062A95DBC200C687D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25503052A95DBC200C687D7 /* Preview Assets.xcassets */; };
 		F255030D2A95DFBE00C687D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F255030C2A95DFBE00C687D7 /* GoogleService-Info.plist */; };
 		F25503102A95FE8F00C687D7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F255030F2A95FE8F00C687D7 /* FirebaseAnalytics */; };
+		F25503122A96191100C687D7 /* AzitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25503112A96191100C687D7 /* AzitDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F25502FB2A95DBC100C687D7 /* AziTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AziTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25502FE2A95DBC100C687D7 /* AziTeamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AziTeamApp.swift; sourceTree = "<group>"; };
-		F25503002A95DBC100C687D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F25503002A95DBC100C687D7 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		F25503022A95DBC200C687D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F25503052A95DBC200C687D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F255030C2A95DFBE00C687D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F25503112A96191100C687D7 /* AzitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzitDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				F25503042A95DBC200C687D7 /* Preview Content */,
 				F25502FE2A95DBC100C687D7 /* AziTeamApp.swift */,
-				F25503002A95DBC100C687D7 /* ContentView.swift */,
+				F25503002A95DBC100C687D7 /* MainPage.swift */,
+				F25503112A96191100C687D7 /* AzitDetailView.swift */,
 				F25503022A95DBC200C687D7 /* Assets.xcassets */,
 			);
 			path = AziTeam;
@@ -149,7 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F25503012A95DBC100C687D7 /* ContentView.swift in Sources */,
+				F25503122A96191100C687D7 /* AzitDetailView.swift in Sources */,
+				F25503012A95DBC100C687D7 /* MainPage.swift in Sources */,
 				F25502FF2A95DBC100C687D7 /* AziTeamApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
