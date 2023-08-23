@@ -11,6 +11,8 @@
 		F25503012A95DBC100C687D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25503002A95DBC100C687D7 /* ContentView.swift */; };
 		F25503032A95DBC200C687D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25503022A95DBC200C687D7 /* Assets.xcassets */; };
 		F25503062A95DBC200C687D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25503052A95DBC200C687D7 /* Preview Assets.xcassets */; };
+		F255030D2A95DFBE00C687D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F255030C2A95DFBE00C687D7 /* GoogleService-Info.plist */; };
+		F25503102A95FE8F00C687D7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F255030F2A95FE8F00C687D7 /* FirebaseAnalytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		F25503002A95DBC100C687D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F25503022A95DBC200C687D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F25503052A95DBC200C687D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F255030C2A95DFBE00C687D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25503102A95FE8F00C687D7 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,6 +39,7 @@
 		F25502F22A95DBC100C687D7 = {
 			isa = PBXGroup;
 			children = (
+				F255030C2A95DFBE00C687D7 /* GoogleService-Info.plist */,
 				F25502FD2A95DBC100C687D7 /* AziTeam */,
 				F25502FC2A95DBC100C687D7 /* Products */,
 			);
@@ -51,10 +56,10 @@
 		F25502FD2A95DBC100C687D7 /* AziTeam */ = {
 			isa = PBXGroup;
 			children = (
+				F25503042A95DBC200C687D7 /* Preview Content */,
 				F25502FE2A95DBC100C687D7 /* AziTeamApp.swift */,
 				F25503002A95DBC100C687D7 /* ContentView.swift */,
 				F25503022A95DBC200C687D7 /* Assets.xcassets */,
-				F25503042A95DBC200C687D7 /* Preview Content */,
 			);
 			path = AziTeam;
 			sourceTree = "<group>";
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = AziTeam;
+			packageProductDependencies = (
+				F255030F2A95FE8F00C687D7 /* FirebaseAnalytics */,
+			);
 			productName = AziTeam;
 			productReference = F25502FB2A95DBC100C687D7 /* AziTeam.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = F25502F22A95DBC100C687D7;
+			packageReferences = (
+				F255030E2A95FE8F00C687D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F25502FC2A95DBC100C687D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +138,7 @@
 			files = (
 				F25503062A95DBC200C687D7 /* Preview Assets.xcassets in Resources */,
 				F25503032A95DBC200C687D7 /* Assets.xcassets in Resources */,
+				F255030D2A95DFBE00C687D7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +282,7 @@
 				DEVELOPMENT_TEAM = R4HWH7EV39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/GoogleService-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +312,7 @@
 				DEVELOPMENT_TEAM = R4HWH7EV39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/GoogleService-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F255030E2A95FE8F00C687D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F255030F2A95FE8F00C687D7 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F255030E2A95FE8F00C687D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F25502F32A95DBC100C687D7 /* Project object */;
 }
