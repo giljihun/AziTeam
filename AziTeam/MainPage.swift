@@ -26,7 +26,7 @@ struct AzitCardView: View {
                 .clipped()
             Text(azit.teamName)
                 .font(.headline)
-                .foregroundColor(.black)
+                .foregroundColor(.primary)
         }
     }
 }
@@ -40,8 +40,10 @@ struct SearchBar: View {
             // 검색창 활성화
             if isSearchActive {
                 Button(action: {
-                    self.isSearchActive.toggle()
-                    self.text = ""
+                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
+                        self.isSearchActive.toggle()
+                        self.text = ""
+                    }
                 }) {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(Color.gray)
@@ -49,15 +51,15 @@ struct SearchBar: View {
                 }
                 TextField("Search", text: $text)
                     .padding(8)
-                    .background(Color(.systemGray6))
+//                    .background(Color(.systemGray6))
                     .cornerRadius(8)
-                    .frame(width: 150)
+                    .frame(width: isSearchActive ? 150 : 0)
                     .overlay(
                         HStack {
                             if isSearchActive {
                                 Spacer()
                                 Button(action: {
-                                    withAnimation {
+                                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
                                         self.text = ""
                                     }
                                 }) {
@@ -67,10 +69,11 @@ struct SearchBar: View {
                                 }
                             }
                         })
+
             } else {
                 // 검색창이 비활성화된 경우
                 Button(action: {
-                    withAnimation {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
                         self.isSearchActive.toggle()
                         self.text = ""
                     }
@@ -122,13 +125,14 @@ struct MainPage: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     HStack {
-                        Image("hany")
-                            .resizable()
-                            .frame(width:40, height:40)
-                            .cornerRadius(30)
-                        Text("AziTeam").font(.headline)
+                        Image(systemName: "number")
                             .fontWeight(.black)
                             .bold()
+                            .cornerRadius(50)
+                        Text("AziTeam ").font(.headline)
+                            .fontWeight(.black)
+                            .bold()
+                            .kerning(-2)
                     }
                 }
             }
