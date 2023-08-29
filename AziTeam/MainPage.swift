@@ -33,18 +33,53 @@ struct AzitCardView: View {
     
 struct SearchBar: View {
     @Binding var text: String
-    @State private var isEditing = false
+    @Binding var isSearchActive: Bool
 
     var body: some View {
         HStack {
-            Image(systemName: "magnifyingglass") // 돋보기 이미지
-                .foregroundColor(Color.gray)
-                .padding(.leading, 8)
-            
-            TextField("Search", text: $text)
-                .padding(8)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
+            // 검색창 활성화
+            if isSearchActive {
+                Button(action: {
+                    self.isSearchActive.toggle()
+                    self.text = ""
+                }) {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(Color.gray)
+                        .padding(.leading, 8)
+                }
+                TextField("Search", text: $text)
+                    .padding(8)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
+                    .frame(width: 150)
+                    .overlay(
+                        HStack {
+                            if isSearchActive {
+                                Spacer()
+                                Button(action: {
+                                    withAnimation {
+                                        self.text = ""
+                                    }
+                                }) {
+                                    Image(systemName: "multiply.circle.fill")
+                                        .foregroundColor(.gray)
+                                        .padding(.trailing, 5)
+                                }
+                            }
+                        })
+            } else {
+                // 검색창이 비활성화된 경우
+                Button(action: {
+                    withAnimation {
+                        self.isSearchActive.toggle()
+                        self.text = ""
+                    }
+                }) {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(Color.gray)
+                        .padding(.leading, 8)
+                }
+            }
         }
     }
 }
@@ -52,6 +87,7 @@ struct SearchBar: View {
 struct MainPage: View {
     
     @State private var searchText = ""
+    @State private var isSearchActive = false
     
     let azitData: [Azit] = [
         Azit(imageName: "testimage1", teamName: "Mobicom"),
@@ -98,15 +134,9 @@ struct MainPage: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack{
-                        SearchBar(text: $searchText)
-                            .frame(width: 200)
-                        Button(action: {
-                            // 버튼이 클릭되었을 때 실행되는 코드를 여기에 작성
-                        }) {
-                            Image(systemName: "plus")
-                                .foregroundColor(Color.gray)
-                        }
+                    SearchBar(text: $searchText, isSearchActive: $isSearchActive)
+                        .onTapGesture {
+                            UIApplication.shared.sendAction(#selector(UIResponder.becomeFirstResponder), to: nil, from: nil, for: nil)
                     }
                 }
             }
