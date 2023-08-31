@@ -91,11 +91,12 @@ struct MainPage: View {
     
     @State private var searchText = ""
     @State private var isSearchActive = false
+    @State private var showModal = false
     
     let azitData: [Azit] = [
         Azit(imageName: "testimage1", teamName: "Mobicom"),
-        Azit(imageName: "testimage2", teamName: "국민의 길"),
-        Azit(imageName: "아니개귀엽네하니", teamName: "Team C"),
+        Azit(imageName: "용기사오명진", teamName: "오명진팀"),
+        Azit(imageName: "Telkom", teamName: "Telkom Univ"),
     ]
     
     private var filteredAzitData: [Azit] {
@@ -141,6 +142,19 @@ struct MainPage: View {
                     SearchBar(text: $searchText, isSearchActive: $isSearchActive)
                         .onTapGesture {
                             UIApplication.shared.sendAction(#selector(UIResponder.becomeFirstResponder), to: nil, from: nil, for: nil)
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        self.showModal = true
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(Color.gray)
+                    }
+                    .sheet(isPresented: self.$showModal) {
+                        CreateAzitView()
                     }
                 }
             }
