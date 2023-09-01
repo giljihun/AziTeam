@@ -155,6 +155,7 @@ struct MainPage: View {
                     }
                     .sheet(isPresented: self.$showModal) {
                         CreateAzitView()
+                            .cornerRadius(30)
                     }
                 }
             }
