@@ -154,7 +154,7 @@ struct MainPage: View {
                             .foregroundColor(Color.gray)
                     }
                     .sheet(isPresented: self.$showModal) {
-                        CreateAzitView()
+                        CreateAzitView_modal()
                             .cornerRadius(30)
                     }
                 }

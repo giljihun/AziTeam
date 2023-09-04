@@ -14,8 +14,9 @@
 		F255030D2A95DFBE00C687D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F255030C2A95DFBE00C687D7 /* GoogleService-Info.plist */; };
 		F25503102A95FE8F00C687D7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F255030F2A95FE8F00C687D7 /* FirebaseAnalytics */; };
 		F25503122A96191100C687D7 /* AzitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25503112A96191100C687D7 /* AzitDetailView.swift */; };
-		F29574CA2A9E16330023AE3B /* CreateAzitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574C92A9E16330023AE3B /* CreateAzitView.swift */; };
+		F29574CA2A9E16330023AE3B /* CreateAzitView_modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574C92A9E16330023AE3B /* CreateAzitView_modal.swift */; };
 		F29574CC2AA1C7370023AE3B /* TeamCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574CB2AA1C7370023AE3B /* TeamCreationView.swift */; };
+		F29574CE2AA5AEA00023AE3B /* JoinTeamView_alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574CD2AA5AEA00023AE3B /* JoinTeamView_alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,9 @@
 		F25503052A95DBC200C687D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F255030C2A95DFBE00C687D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F25503112A96191100C687D7 /* AzitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzitDetailView.swift; sourceTree = "<group>"; };
-		F29574C92A9E16330023AE3B /* CreateAzitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAzitView.swift; sourceTree = "<group>"; };
+		F29574C92A9E16330023AE3B /* CreateAzitView_modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAzitView_modal.swift; sourceTree = "<group>"; };
 		F29574CB2AA1C7370023AE3B /* TeamCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCreationView.swift; sourceTree = "<group>"; };
+		F29574CD2AA5AEA00023AE3B /* JoinTeamView_alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamView_alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +69,9 @@
 				F25502FE2A95DBC100C687D7 /* AziTeamApp.swift */,
 				F25503002A95DBC100C687D7 /* MainPage.swift */,
 				F25503112A96191100C687D7 /* AzitDetailView.swift */,
-				F29574C92A9E16330023AE3B /* CreateAzitView.swift */,
+				F29574C92A9E16330023AE3B /* CreateAzitView_modal.swift */,
 				F29574CB2AA1C7370023AE3B /* TeamCreationView.swift */,
+				F29574CD2AA5AEA00023AE3B /* JoinTeamView_alert.swift */,
 			);
 			path = AziTeam;
 			sourceTree = "<group>";
@@ -159,9 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F29574CC2AA1C7370023AE3B /* TeamCreationView.swift in Sources */,
+				F29574CE2AA5AEA00023AE3B /* JoinTeamView_alert.swift in Sources */,
 				F25503122A96191100C687D7 /* AzitDetailView.swift in Sources */,
 				F25503012A95DBC100C687D7 /* MainPage.swift in Sources */,
-				F29574CA2A9E16330023AE3B /* CreateAzitView.swift in Sources */,
+				F29574CA2A9E16330023AE3B /* CreateAzitView_modal.swift in Sources */,
 				F25502FF2A95DBC100C687D7 /* AziTeamApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

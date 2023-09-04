@@ -10,6 +10,8 @@ import SwiftUI
 struct TeamCreationView: View {
     
     var body: some View {
-        Text("팀 생성 페이지")
+        VStack {
+            Text("팀 생성 페이지")
+        }
     }
 }
