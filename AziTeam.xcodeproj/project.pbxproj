@@ -16,7 +16,10 @@
 		F25503122A96191100C687D7 /* AzitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25503112A96191100C687D7 /* AzitDetailView.swift */; };
 		F29574CA2A9E16330023AE3B /* CreateAzitView_modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574C92A9E16330023AE3B /* CreateAzitView_modal.swift */; };
 		F29574CC2AA1C7370023AE3B /* TeamCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574CB2AA1C7370023AE3B /* TeamCreationView.swift */; };
-		F29574CE2AA5AEA00023AE3B /* JoinTeamView_alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574CD2AA5AEA00023AE3B /* JoinTeamView_alert.swift */; };
+		F29574D22AB06F860023AE3B /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574D12AB06F860023AE3B /* BottomPopupView.swift */; };
+		F29574D52AB0726A0023AE3B /* NamePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574D42AB0726A0023AE3B /* NamePopupView.swift */; };
+		F29574D72AB073910023AE3B /* View+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574D62AB073910023AE3B /* View+CornerRadius.swift */; };
+		F29574D92AB073C60023AE3B /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574D82AB073C60023AE3B /* PopupModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +32,10 @@
 		F25503112A96191100C687D7 /* AzitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzitDetailView.swift; sourceTree = "<group>"; };
 		F29574C92A9E16330023AE3B /* CreateAzitView_modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAzitView_modal.swift; sourceTree = "<group>"; };
 		F29574CB2AA1C7370023AE3B /* TeamCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCreationView.swift; sourceTree = "<group>"; };
-		F29574CD2AA5AEA00023AE3B /* JoinTeamView_alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamView_alert.swift; sourceTree = "<group>"; };
+		F29574D12AB06F860023AE3B /* BottomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
+		F29574D42AB0726A0023AE3B /* NamePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamePopupView.swift; sourceTree = "<group>"; };
+		F29574D62AB073910023AE3B /* View+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+CornerRadius.swift"; sourceTree = "<group>"; };
+		F29574D82AB073C60023AE3B /* PopupModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		F25502FD2A95DBC100C687D7 /* AziTeam */ = {
 			isa = PBXGroup;
 			children = (
+				F29574D32AB06FC00023AE3B /* BottomPopupManager */,
 				F25503042A95DBC200C687D7 /* Preview Content */,
 				F25503022A95DBC200C687D7 /* Assets.xcassets */,
 				F25502FE2A95DBC100C687D7 /* AziTeamApp.swift */,
@@ -71,7 +78,6 @@
 				F25503112A96191100C687D7 /* AzitDetailView.swift */,
 				F29574C92A9E16330023AE3B /* CreateAzitView_modal.swift */,
 				F29574CB2AA1C7370023AE3B /* TeamCreationView.swift */,
-				F29574CD2AA5AEA00023AE3B /* JoinTeamView_alert.swift */,
 			);
 			path = AziTeam;
 			sourceTree = "<group>";
@@ -82,6 +88,17 @@
 				F25503052A95DBC200C687D7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F29574D32AB06FC00023AE3B /* BottomPopupManager */ = {
+			isa = PBXGroup;
+			children = (
+				F29574D12AB06F860023AE3B /* BottomPopupView.swift */,
+				F29574D42AB0726A0023AE3B /* NamePopupView.swift */,
+				F29574D62AB073910023AE3B /* View+CornerRadius.swift */,
+				F29574D82AB073C60023AE3B /* PopupModifier.swift */,
+			);
+			path = BottomPopupManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,12 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29574D92AB073C60023AE3B /* PopupModifier.swift in Sources */,
 				F29574CC2AA1C7370023AE3B /* TeamCreationView.swift in Sources */,
-				F29574CE2AA5AEA00023AE3B /* JoinTeamView_alert.swift in Sources */,
 				F25503122A96191100C687D7 /* AzitDetailView.swift in Sources */,
 				F25503012A95DBC100C687D7 /* MainPage.swift in Sources */,
+				F29574D22AB06F860023AE3B /* BottomPopupView.swift in Sources */,
 				F29574CA2A9E16330023AE3B /* CreateAzitView_modal.swift in Sources */,
 				F25502FF2A95DBC100C687D7 /* AziTeamApp.swift in Sources */,
+				F29574D72AB073910023AE3B /* View+CornerRadius.swift in Sources */,
+				F29574D52AB0726A0023AE3B /* NamePopupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
