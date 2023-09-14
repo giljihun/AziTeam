@@ -29,7 +29,7 @@ struct CreateAzitView_modal: View {
                     .lineLimit(1)
                     .opacity(isAnimating1 ? 1.0 : 0.0) // 처음에는 숨겨놓음
                     .onAppear {
-                        withAnimation(.easeInOut(duration: 3)) {
+                        withAnimation(.easeInOut(duration: 1.0)) {
                             isAnimating1 = true // 등장 애니메이션 시작
                         }
                     }
@@ -44,7 +44,7 @@ struct CreateAzitView_modal: View {
                     .lineLimit(1)
                     .opacity(isAnimating2 ? 1.0 : 0.0) // 처음에는 숨겨놓음
                     .onAppear {
-                        withAnimation(.easeInOut(duration: 4.0)) {
+                        withAnimation(.easeInOut(duration: 2.0)) {
                             isAnimating2 = true // 등장 애니메이션 시작
                         }
                     }
@@ -57,7 +57,7 @@ struct CreateAzitView_modal: View {
                     .lineLimit(1)
                     .opacity(isAnimating3 ? 1.0 : 0.0) // 처음에는 숨겨놓음
                     .onAppear {
-                        withAnimation(.easeInOut(duration: 6.0)) {
+                        withAnimation(.easeInOut(duration: 3.0)) {
                             isAnimating3 = true // 등장 애니메이션 시작
                         }
                     }
@@ -94,7 +94,7 @@ struct CreateAzitView_modal: View {
                 .cornerRadius(10)
                 .opacity(isAnimating5 ? 1 : 0)
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 4.0)) {
+                    withAnimation(.easeInOut(duration: 3.0)) {
                         isAnimating5 = true // 등장 애니메이션 시작
                     }
                 }
@@ -112,7 +112,7 @@ struct CreateAzitView_modal: View {
                         .cornerRadius(10)
                         .opacity(isAnimating5 ? 1 : 0)
                         .onAppear {
-                            withAnimation(.easeInOut(duration: 4.0)) {
+                            withAnimation(.easeInOut(duration: 3.0)) {
                                 isAnimating5 = true
                             }
                         }

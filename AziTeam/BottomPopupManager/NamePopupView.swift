@@ -36,15 +36,15 @@ struct NamePopupView: View {
                 .autocapitalization(.none) // 입력된 텍스트를 자동으로 대문자로 바꾸지 않음
                 .disableAutocorrection(true) // 자동 교정 기능 비활성화
                 .textContentType(.none) // 텍스트의 유형을 지정하지 않음
-                .keyboardType(.default) // 기본 키보드 사용
                 .textCase(.lowercase) // 입력된 텍스트를 소문자로 유지
+                .keyboardType(.decimalPad)
             
             HStack {
                 Spacer()
                 Button(action: {
                     isPresented = false
                 }, label: {
-                    Text("Done")
+                    Text("Join")
                 })
                 .frame(width: 80, height: 36)
                 .background(Color.green)
