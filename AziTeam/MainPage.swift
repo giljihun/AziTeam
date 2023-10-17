@@ -8,95 +8,20 @@ import SwiftUI
 
 struct Azit: Identifiable {
     let id = UUID()
-    let imageName: String
+    let image: Image
     let teamName: String
-}
-
-
-struct AzitCardView: View {
-    let azit: Azit
-        
-    var body: some View {
-        VStack {
-            Image(azit.imageName)
-                .resizable()
-                .scaledToFill()
-                .frame(width: AzitFrameSet(), height: 200)
-                .cornerRadius(10)
-                .clipped()
-            Text(azit.teamName)
-                .font(.headline)
-                .foregroundColor(.primary)
-        }
-    }
+    let teamDescription : String
 }
     
-struct SearchBar: View {
-    @Binding var text: String
-    @Binding var isSearchActive: Bool
-
-    var body: some View {
-        HStack {
-            // 검색창 활성화
-            if isSearchActive {
-                Button(action: {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
-                        self.isSearchActive.toggle()
-                        self.text = ""
-                    }
-                }) {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(Color.gray)
-                        .padding(.leading, 8)
-                }
-                TextField("Search", text: $text)
-                    .padding(8)
-//                    .background(Color(.systemGray6))
-                    .cornerRadius(8)
-                    .frame(width: isSearchActive ? 150 : 0)
-                    .overlay(
-                        HStack {
-                            if isSearchActive {
-                                Spacer()
-                                Button(action: {
-                                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
-                                        self.text = ""
-                                    }
-                                }) {
-                                    Image(systemName: "multiply.circle.fill")
-                                        .foregroundColor(.gray)
-                                        .padding(.trailing, 5)
-                                }
-                            }
-                        })
-
-            } else {
-                // 검색창이 비활성화된 경우
-                Button(action: {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
-                        self.isSearchActive.toggle()
-                        self.text = ""
-                    }
-                }) {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(Color.gray)
-                        .padding(.leading, 8)
-                }
-            }
-        }
-    }
-}
-
 struct MainPage: View {
-    
     @State private var searchText = ""
     @State private var isSearchActive = false
     @State private var showModal = false
     
-    let azitData: [Azit] = [
-        Azit(imageName: "testimage1", teamName: "Mobicom"),
-        Azit(imageName: "용기사오명진", teamName: "오명진팀"),
-        Azit(imageName: "Telkom", teamName: "Telkom Univ"),
+    @State private var azitData: [Azit] = [
+        Azit(image: Image(systemName: "person.3.fill"), teamName: "Mobicom", teamDescription: "Mobile & Network Computing Lab"),
+        Azit(image: Image(systemName: "person.3.fill"), teamName: "오명진팀", teamDescription: "오명진의 특수부대"),
+        Azit(image: Image(systemName: "person.3.fill"), teamName: "Telkom Univ", teamDescription: "'23년 인도네시아 글로벌 캡스톤 팀"),
     ]
     
     private var filteredAzitData: [Azit] {
@@ -162,6 +87,63 @@ struct MainPage: View {
         }
     }
 }
+
+struct SearchBar: View {
+    @Binding var text: String
+    @Binding var isSearchActive: Bool
+
+    var body: some View {
+        HStack {
+            // 검색창 활성화
+            if isSearchActive {
+                Button(action: {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
+                        self.isSearchActive.toggle()
+                        self.text = ""
+                    }
+                }) {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(Color.gray)
+                        .padding(.leading, 8)
+                }
+                TextField("Search", text: $text)
+                    .padding(8)
+//                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
+                    .frame(width: isSearchActive ? 150 : 0)
+                    .overlay(
+                        HStack {
+                            if isSearchActive {
+                                Spacer()
+                                Button(action: {
+                                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
+                                        self.text = ""
+                                    }
+                                }) {
+                                    Image(systemName: "multiply.circle.fill")
+                                        .foregroundColor(.gray)
+                                        .padding(.trailing, 5)
+                                }
+                            }
+                        })
+
+            } else {
+                // 검색창이 비활성화된 경우
+                Button(action: {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 0.01)) {
+                        self.isSearchActive.toggle()
+                        self.text = ""
+                    }
+                }) {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(Color.gray)
+                        .padding(.leading, 8)
+                }
+            }
+        }
+    }
+}
+
 
 func AzitFrameSet() -> CGFloat {
     let deviceWidth = UIScreen.main.bounds.width

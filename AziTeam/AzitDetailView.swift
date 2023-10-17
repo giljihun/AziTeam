@@ -12,7 +12,7 @@ struct AzitDetailView: View {
     
     var body: some View {
         VStack {
-            Image(azit.imageName)
+            azit.image
                 .resizable()
                 .scaledToFit()
                 .frame(height: 200)
@@ -45,7 +45,7 @@ struct AzitDetailView: View {
 
 struct AzitDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let previewAzit = Azit(imageName: "azit1", teamName: "Team A")
+        let previewAzit = Azit(image: Image(systemName: "person.3.fill"), teamName: "Team A", teamDescription: "1")
         AzitDetailView(azit: previewAzit)
     }
 }

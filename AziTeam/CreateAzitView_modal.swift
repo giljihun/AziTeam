@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+struct DragHandle: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 3)
+            .frame(width: 30, height: 5)
+            .foregroundColor(Color.gray.opacity(0.5))
+            .padding(8)
+    }
+}
+
 struct CreateAzitView_modal: View {
     @Environment(\.presentationMode) var mode
     @State private var isAnimating1 = false
@@ -23,6 +32,7 @@ struct CreateAzitView_modal: View {
     
         NavigationView {
             VStack {
+                DragHandle()
                 Text("당신의 팀을 만드세요.")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
