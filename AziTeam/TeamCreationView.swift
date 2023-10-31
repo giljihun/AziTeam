@@ -122,7 +122,7 @@ struct TeamCreationView: View {
                             .foregroundColor(isInputValid ? Color.blue : Color.gray)
                     }
                     .disabled(!isInputValid)
-
+                    
                 }
             }
             Spacer()

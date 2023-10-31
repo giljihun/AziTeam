@@ -12,7 +12,7 @@ struct Azit: Identifiable {
     let teamName: String
     let teamDescription : String
 }
-    
+
 struct MainPage: View {
     @State private var searchText = ""
     @State private var isSearchActive = false
@@ -33,7 +33,7 @@ struct MainPage: View {
             }
         }
     }
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -67,7 +67,7 @@ struct MainPage: View {
                     SearchBar(text: $searchText, isSearchActive: $isSearchActive)
                         .onTapGesture {
                             UIApplication.shared.sendAction(#selector(UIResponder.becomeFirstResponder), to: nil, from: nil, for: nil)
-                    }
+                        }
                 }
             }
             .toolbar {
@@ -91,7 +91,7 @@ struct MainPage: View {
 struct SearchBar: View {
     @Binding var text: String
     @Binding var isSearchActive: Bool
-
+    
     var body: some View {
         HStack {
             // 검색창 활성화
@@ -108,7 +108,7 @@ struct SearchBar: View {
                 }
                 TextField("Search", text: $text)
                     .padding(8)
-//                    .background(Color(.systemGray6))
+                //                    .background(Color(.systemGray6))
                     .cornerRadius(8)
                     .frame(width: isSearchActive ? 150 : 0)
                     .overlay(
@@ -126,7 +126,7 @@ struct SearchBar: View {
                                 }
                             }
                         })
-
+                
             } else {
                 // 검색창이 비활성화된 경우
                 Button(action: {

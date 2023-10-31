@@ -29,7 +29,7 @@ struct CreateAzitView_modal: View {
     @State private var isPresentingPopup = false
     
     var body: some View {
-    
+        
         NavigationView {
             VStack {
                 DragHandle()
