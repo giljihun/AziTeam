@@ -20,6 +20,7 @@
 		F29574D52AB0726A0023AE3B /* NamePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574D42AB0726A0023AE3B /* NamePopupView.swift */; };
 		F29574D72AB073910023AE3B /* View+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574D62AB073910023AE3B /* View+CornerRadius.swift */; };
 		F29574D92AB073C60023AE3B /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29574D82AB073C60023AE3B /* PopupModifier.swift */; };
+		F2A196FA2AF0D81600F8B1AD /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A196F92AF0D81600F8B1AD /* LocationInputView.swift */; };
 		F2C4F0562ADE609C00838B29 /* AzitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C4F0552ADE609C00838B29 /* AzitCardView.swift */; };
 		F2C4F0582ADE6B5400838B29 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C4F0572ADE6B5400838B29 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		F29574D42AB0726A0023AE3B /* NamePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamePopupView.swift; sourceTree = "<group>"; };
 		F29574D62AB073910023AE3B /* View+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+CornerRadius.swift"; sourceTree = "<group>"; };
 		F29574D82AB073C60023AE3B /* PopupModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
+		F2A196F92AF0D81600F8B1AD /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		F2C4F0552ADE609C00838B29 /* AzitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzitCardView.swift; sourceTree = "<group>"; };
 		F2C4F0572ADE6B5400838B29 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,8 +84,9 @@
 				F2C4F0552ADE609C00838B29 /* AzitCardView.swift */,
 				F25503112A96191100C687D7 /* AzitDetailView.swift */,
 				F29574C92A9E16330023AE3B /* CreateAzitView_modal.swift */,
-				F29574CB2AA1C7370023AE3B /* TeamCreationView.swift */,
 				F2C4F0572ADE6B5400838B29 /* ImagePicker.swift */,
+				F29574CB2AA1C7370023AE3B /* TeamCreationView.swift */,
+				F2A196F92AF0D81600F8B1AD /* LocationInputView.swift */,
 			);
 			path = AziTeam;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				F25503122A96191100C687D7 /* AzitDetailView.swift in Sources */,
 				F25503012A95DBC100C687D7 /* MainPage.swift in Sources */,
 				F29574D22AB06F860023AE3B /* BottomPopupView.swift in Sources */,
+				F2A196FA2AF0D81600F8B1AD /* LocationInputView.swift in Sources */,
 				F29574CA2A9E16330023AE3B /* CreateAzitView_modal.swift in Sources */,
 				F2C4F0582ADE6B5400838B29 /* ImagePicker.swift in Sources */,
 				F25502FF2A95DBC100C687D7 /* AziTeamApp.swift in Sources */,
