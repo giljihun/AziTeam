@@ -3,9 +3,11 @@ import MapKit
 
 struct LocationInputView: View {
     @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.88371, longitude: 127.73947),
+        center: CLLocationCoordinate2D(latitude: 36.351832479773925, longitude: 127.30154592425923),
         span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002)
     )
+
+    @State var tracking: MapUserTrackingMode = .follow
     
     var body: some View {
         VStack {
@@ -14,7 +16,11 @@ struct LocationInputView: View {
                 .fontWeight(.black)
                 .padding(.bottom, 30)
             
-            Map(coordinateRegion: $region, showsUserLocation: true)
+            Map(coordinateRegion: $region,
+                interactionModes: MapInteractionModes.all,
+                showsUserLocation: true,
+                userTrackingMode: $tracking
+                )
                 .onAppear(perform: {
                     let manager = CLLocationManager()
                     manager.requestWhenInUseAuthorization()
@@ -22,6 +28,7 @@ struct LocationInputView: View {
                 }
                 )
         }
+        .navigationBarBackButtonHidden()
         .frame(width: 350, height: 500)
         
     }
