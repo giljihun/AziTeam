@@ -84,4 +84,5 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
         print(error)
     }
     
+    func convertLocationToAddress()
 }
