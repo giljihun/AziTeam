@@ -1,13 +1,19 @@
 import SwiftUI
 import MapKit
 
-struct LocationInputView: View {
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 36.351832479773925, longitude: 127.30154592425923),
-        span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002)
-    )
+struct MapViewCoordinator: UIViewRepresentable {
+    @ObservedObject var locationManager: LocationManager
+    
+    func makeUIView(context: Context) -> some UIView {
+        return locationManager.mapView
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {}
+}
 
-    @State var tracking: MapUserTrackingMode = .follow
+struct LocationInputView: View {
+    
+    @ObservedObject var locationManager = LocationManager() // LocationManager 인스턴스 생성
     
     var body: some View {
         VStack {
@@ -15,18 +21,11 @@ struct LocationInputView: View {
                 .font(.largeTitle)
                 .fontWeight(.black)
                 .padding(.bottom, 30)
-            
-            Map(coordinateRegion: $region,
-                interactionModes: MapInteractionModes.all,
-                showsUserLocation: true,
-                userTrackingMode: $tracking
-                )
-                .onAppear(perform: {
-                    let manager = CLLocationManager()
-                    manager.requestWhenInUseAuthorization()
-                    manager.startUpdatingLocation()
+            MapViewCoordinator(locationManager: locationManager) // MapView를 표시
+                .onAppear {
+                    locationManager.configureLocationManager()
                 }
-                )
+            
         }
         .navigationBarBackButtonHidden()
         .frame(width: 350, height: 500)
@@ -39,3 +38,15 @@ struct LocationInputView_Previews: PreviewProvider {
         LocationInputView()
     }
 }
+
+//Map(coordinateRegion: $region,
+//    interactionModes: MapInteractionModes.all,
+//    showsUserLocation: true,
+//    userTrackingMode: $tracking
+//)
+//.onAppear(perform: {
+//    let manager = CLLocationManager()
+//    manager.requestWhenInUseAuthorization()
+//    manager.startUpdatingLocation()
+//}
+//)

@@ -84,5 +84,17 @@ class LocationManager: NSObject, ObservableObject, MKMapViewDelegate, CLLocation
         print(error)
     }
     
-    func convertLocationToAddress()
+    func convertLocationToAddress(location: CLLocation) {
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            if error != nil {
+                return
+            }
+            
+            guard let placemark = placemarks?.first else { return }
+            
+            self.currentPlace = "\(placemark.country ?? "") \(placemark.locality ?? "") \(placemark.name ?? "")"
+        }
+    }
 }
